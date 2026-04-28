@@ -1,0 +1,31 @@
+19:50:27.381 DEBUG AUTOMATION - 
+=============================================
+Request
+=============================================
+(GET) 	 https://api.blassacademy.com/estado
+	Accept: */*
+	Content-Type: application/json
+
+
+=============================================
+Response
+=============================================
+HTTP/1.1 200 OK 	 Response Time: 3086ms
+Response Headers:
+	Age: 0
+	Cache-Control: public, max-age=0, must-revalidate
+	Content-Length: 61
+	Content-Type: application/json; charset=utf-8
+	Date: Tue, 28 Apr 2026 00:50:26 GMT
+	Server: Vercel
+	Strict-Transport-Security: max-age=63072000
+	X-Vercel-Cache: MISS
+	X-Vercel-Id: iad1::iad1::p4wff-1777337424932-df1c9b9be8a6
+
+Response Body:
+{
+    "mensaje": "© Blass Academy. Todos los derechos Reservados"
+}
+
+
+19:50:27.452 INFO  AUTOMATION - afterScenario: Estado, status: PASSED

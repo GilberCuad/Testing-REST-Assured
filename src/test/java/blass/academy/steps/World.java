@@ -7,6 +7,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.ParameterType;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,6 +17,8 @@ import io.restassured.http.ContentType;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
+import java.nio.file.Path;
 
 public class World {
     RequestSpecification request;
@@ -63,5 +66,21 @@ public class World {
     @ParameterType("GET|POST|PUT|PATCH|DELETE")
     public Method metodoHttp(String metodo) {
         return Method.valueOf(metodo.toUpperCase());
+    }
+
+    @And("Se usa el payload {string}")
+    public void seUsaElPayload(String archivo) {
+        final var path = Path.of(Config.get("path.payloads"), archivo);
+        request.body(path.toFile());
+    }
+
+    @And("Se asigna el path param {string}={string}")
+    public void seAsignaElPathParam(String key, String value) {
+        request.pathParams(key, value);
+    }
+
+    @And("Se asigna los query params {string}={string}")
+    public void asignarQueryParams(String key, String value) {
+        request.queryParam(key, value);
     }
 }

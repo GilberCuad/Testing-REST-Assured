@@ -1,31 +1,349 @@
-19:50:27.381 DEBUG AUTOMATION - 
+21:41:03.330 DEBUG AUTOMATION - 
 =============================================
 Request
 =============================================
-(GET) 	 https://api.blassacademy.com/estado
+(POST) 	 https://api.blassacademy.com/productos
+Request Headers:
 	Accept: */*
 	Content-Type: application/json
 
+Request Body:
+{
+  "nombre": "Blass",
+  "precio": 18.775,
+  "cantidad": 9,
+  "peso": 9.648,
+  "perecible": true,
+  "volumen": 42.883,
+  "criticas": [
+    {
+      "puntaje": 3.79,
+      "comentario": "Tenderly braised lamb in a rich sesame seed and brussels sprouts sauce, served with a side of creamy garlic.",
+      "correo": "Geraldine.Homenick91@yahoo.com",
+      "usuario": "Geraldine_Homenick29"
+    },
+    {
+      "puntaje": 2.26,
+      "comentario": "Three crabs with french eschallots, dried chinese broccoli, kale, dried chinese broccoli and arrowroot. With a side of baked tomato, and your choice of olives or spelt.",
+      "correo": "Kira.Ullrich77@hotmail.com",
+      "usuario": "Kira_Ullrich"
+    },
+    {
+      "puntaje": 2.84,
+      "comentario": "Our bitter crocodile, slow-cooked to perfection, accompanied by steamed arugula and a rich, savory gravy.",
+      "correo": "Jaqueline_Cummerata44@yahoo.com",
+      "usuario": "Jaqueline_Cummerata59"
+    },
+    {
+      "puntaje": 4.98,
+      "comentario": "A special pink sultanas from Malta. To support the strong flavor it is sided with a tablespoon of lemon pepper.",
+      "correo": "Adelia.Pacocha@gmail.com",
+      "usuario": "Adelia_Pacocha79"
+    },
+    {
+      "puntaje": 3.41,
+      "comentario": "Our sweet lamb, slow-cooked to perfection, accompanied by steamed lettuce and a rich, savory gravy.",
+      "correo": "Joanne.Larson13@hotmail.com",
+      "usuario": "Joanne_Larson92"
+    }
+  ],
+  "etiquetas": [
+    "Soft",
+    "Intelligent",
+    "Elegant",
+    "Electronic",
+    "Incredible",
+    "Small",
+    "Handcrafted",
+    "Licensed",
+    "Oriental"
+  ]
+}
 
 =============================================
 Response
 =============================================
-HTTP/1.1 200 OK 	 Response Time: 3086ms
+HTTP/1.1 201 Created 	 Response Time: 1119ms
 Response Headers:
-	Age: 0
 	Cache-Control: public, max-age=0, must-revalidate
-	Content-Length: 61
+	Content-Length: 1334
 	Content-Type: application/json; charset=utf-8
-	Date: Tue, 28 Apr 2026 00:50:26 GMT
+	Date: Thu, 30 Apr 2026 02:41:02 GMT
 	Server: Vercel
 	Strict-Transport-Security: max-age=63072000
 	X-Vercel-Cache: MISS
-	X-Vercel-Id: iad1::iad1::p4wff-1777337424932-df1c9b9be8a6
+	X-Vercel-Id: iad1::iad1::q7lxg-1777516862048-6c299d26c0db
 
 Response Body:
 {
-    "mensaje": "© Blass Academy. Todos los derechos Reservados"
+    "nombre": "Blass",
+    "precio": 18.775,
+    "cantidad": 9,
+    "peso": 9.648,
+    "perecible": true,
+    "volumen": 42.883,
+    "criticas": [
+        {
+            "puntaje": 3.79,
+            "comentario": "Tenderly braised lamb in a rich sesame seed and brussels sprouts sauce, served with a side of creamy garlic.",
+            "correo": "Geraldine.Homenick91@yahoo.com",
+            "usuario": "Geraldine_Homenick29"
+        },
+        {
+            "puntaje": 2.26,
+            "comentario": "Three crabs with french eschallots, dried chinese broccoli, kale, dried chinese broccoli and arrowroot. With a side of baked tomato, and your choice of olives or spelt.",
+            "correo": "Kira.Ullrich77@hotmail.com",
+            "usuario": "Kira_Ullrich"
+        },
+        {
+            "puntaje": 2.84,
+            "comentario": "Our bitter crocodile, slow-cooked to perfection, accompanied by steamed arugula and a rich, savory gravy.",
+            "correo": "Jaqueline_Cummerata44@yahoo.com",
+            "usuario": "Jaqueline_Cummerata59"
+        },
+        {
+            "puntaje": 4.98,
+            "comentario": "A special pink sultanas from Malta. To support the strong flavor it is sided with a tablespoon of lemon pepper.",
+            "correo": "Adelia.Pacocha@gmail.com",
+            "usuario": "Adelia_Pacocha79"
+        },
+        {
+            "puntaje": 3.41,
+            "comentario": "Our sweet lamb, slow-cooked to perfection, accompanied by steamed lettuce and a rich, savory gravy.",
+            "correo": "Joanne.Larson13@hotmail.com",
+            "usuario": "Joanne_Larson92"
+        }
+    ],
+    "etiquetas": [
+        "Soft",
+        "Intelligent",
+        "Elegant",
+        "Electronic",
+        "Incredible",
+        "Small",
+        "Handcrafted",
+        "Licensed",
+        "Oriental"
+    ],
+    "id": 263
 }
 
 
-19:50:27.452 INFO  AUTOMATION - afterScenario: Estado, status: PASSED
+21:41:03.396 INFO  AUTOMATION - afterScenario: Crear producto, status: PASSED
+21:41:03.974 DEBUG AUTOMATION - 
+=============================================
+Request
+=============================================
+(PUT) 	 https://api.blassacademy.com/productos/2
+Request Headers:
+	Accept: */*
+	Content-Type: application/json
+
+Request Body:
+{
+  "nombre": "Blass 2",
+  "precio": 18.775,
+  "cantidad": 10,
+  "peso": 9.648,
+  "perecible": true,
+  "volumen": 42.883,
+  "criticas": [
+    {
+      "puntaje": 3.79,
+      "comentario": "Tenderly braised lamb in a rich sesame seed and brussels sprouts sauce, served with a side of creamy garlic.",
+      "correo": "Geraldine.Homenick91@yahoo.com",
+      "usuario": "Geraldine_Homenick29"
+    },
+    {
+      "puntaje": 2.26,
+      "comentario": "Three crabs with french eschallots, dried chinese broccoli, kale, dried chinese broccoli and arrowroot. With a side of baked tomato, and your choice of olives or spelt.",
+      "correo": "Kira.Ullrich77@hotmail.com",
+      "usuario": "Kira_Ullrich"
+    },
+    {
+      "puntaje": 2.84,
+      "comentario": "Our bitter crocodile, slow-cooked to perfection, accompanied by steamed arugula and a rich, savory gravy.",
+      "correo": "Jaqueline_Cummerata44@yahoo.com",
+      "usuario": "Jaqueline_Cummerata59"
+    },
+    {
+      "puntaje": 4.98,
+      "comentario": "A special pink sultanas from Malta. To support the strong flavor it is sided with a tablespoon of lemon pepper.",
+      "correo": "Adelia.Pacocha@gmail.com",
+      "usuario": "Adelia_Pacocha79"
+    },
+    {
+      "puntaje": 3.41,
+      "comentario": "Our sweet lamb, slow-cooked to perfection, accompanied by steamed lettuce and a rich, savory gravy.",
+      "correo": "Joanne.Larson13@hotmail.com",
+      "usuario": "Joanne_Larson92"
+    }
+  ],
+  "etiquetas": [
+    "Soft",
+    "Intelligent",
+    "Elegant",
+    "Electronic",
+    "Incredible",
+    "Small",
+    "Handcrafted",
+    "Licensed",
+    "Oriental"
+  ]
+}
+
+=============================================
+Response
+=============================================
+HTTP/1.1 200 OK 	 Response Time: 453ms
+Response Headers:
+	Cache-Control: public, max-age=0, must-revalidate
+	Content-Encoding: gzip
+	Content-Type: application/json; charset=utf-8
+	Date: Thu, 30 Apr 2026 02:41:03 GMT
+	Server: Vercel
+	Strict-Transport-Security: max-age=63072000
+	X-Vercel-Cache: MISS
+	X-Vercel-Id: iad1::iad1::7hw58-1777516863316-c30e840a089a
+	Transfer-Encoding: chunked
+
+Response Body:
+{
+    "nombre": "Blass 2",
+    "precio": 18.775,
+    "cantidad": 10,
+    "peso": 9.648,
+    "perecible": true,
+    "volumen": 42.883,
+    "criticas": [
+        {
+            "puntaje": 3.79,
+            "comentario": "Tenderly braised lamb in a rich sesame seed and brussels sprouts sauce, served with a side of creamy garlic.",
+            "correo": "Geraldine.Homenick91@yahoo.com",
+            "usuario": "Geraldine_Homenick29"
+        },
+        {
+            "puntaje": 2.26,
+            "comentario": "Three crabs with french eschallots, dried chinese broccoli, kale, dried chinese broccoli and arrowroot. With a side of baked tomato, and your choice of olives or spelt.",
+            "correo": "Kira.Ullrich77@hotmail.com",
+            "usuario": "Kira_Ullrich"
+        },
+        {
+            "puntaje": 2.84,
+            "comentario": "Our bitter crocodile, slow-cooked to perfection, accompanied by steamed arugula and a rich, savory gravy.",
+            "correo": "Jaqueline_Cummerata44@yahoo.com",
+            "usuario": "Jaqueline_Cummerata59"
+        },
+        {
+            "puntaje": 4.98,
+            "comentario": "A special pink sultanas from Malta. To support the strong flavor it is sided with a tablespoon of lemon pepper.",
+            "correo": "Adelia.Pacocha@gmail.com",
+            "usuario": "Adelia_Pacocha79"
+        },
+        {
+            "puntaje": 3.41,
+            "comentario": "Our sweet lamb, slow-cooked to perfection, accompanied by steamed lettuce and a rich, savory gravy.",
+            "correo": "Joanne.Larson13@hotmail.com",
+            "usuario": "Joanne_Larson92"
+        }
+    ],
+    "etiquetas": [
+        "Soft",
+        "Intelligent",
+        "Elegant",
+        "Electronic",
+        "Incredible",
+        "Small",
+        "Handcrafted",
+        "Licensed",
+        "Oriental"
+    ],
+    "id": 2
+}
+
+
+21:41:03.979 INFO  AUTOMATION - afterScenario: Actualizar producto, status: PASSED
+21:41:04.367 DEBUG AUTOMATION - 
+=============================================
+Request
+=============================================
+(PATCH) 	 https://api.blassacademy.com/productos/2
+Request Headers:
+	Accept: */*
+	Content-Type: application/json
+
+Request Body:
+{
+  "nombre": "Blass 2",
+  "cantidad": 35
+}
+
+=============================================
+Response
+=============================================
+HTTP/1.1 200 OK 	 Response Time: 355ms
+Response Headers:
+	Cache-Control: public, max-age=0, must-revalidate
+	Content-Encoding: gzip
+	Content-Type: application/json; charset=utf-8
+	Date: Thu, 30 Apr 2026 02:41:03 GMT
+	Server: Vercel
+	Strict-Transport-Security: max-age=63072000
+	X-Vercel-Cache: MISS
+	X-Vercel-Id: iad1::iad1::xpw7w-1777516863741-011f896f5a58
+	Transfer-Encoding: chunked
+
+Response Body:
+{
+    "id": 2,
+    "nombre": "Blass 2",
+    "precio": 15.699,
+    "cantidad": 35,
+    "peso": 12.704,
+    "perecible": false,
+    "volumen": 31.603,
+    "criticas": [
+        {
+            "puntaje": 1.48,
+            "comentario": "Bocados de codorniz fritos y crujientes, condimentados con papel de arroz y servidos con una salsa picante de lichi.",
+            "correo": "Fredy_Walsh@yahoo.com",
+            "usuario": "Fredy_Walsh95"
+        },
+        {
+            "puntaje": 4.74,
+            "comentario": "Asado a su gusto y rociado con una audaz salsa salteada de balti, servido junto con brotes de soja tostados.",
+            "correo": "Elisa.S@yahoo.com",
+            "usuario": "Elisa.Si82"
+        },
+        {
+            "puntaje": 2.28,
+            "comentario": "Un avetoro común asado a fuego lento con un exterior tierno y jugoso. Relleno de mora y cubierto de salsa de mango. Guarniciones con puré de col rizada y lechuga iceberg silvestre.",
+            "correo": "Jayce.Bo7@gmail.com",
+            "usuario": "Jayce_Bo7"
+        },
+        {
+            "puntaje": 2.69,
+            "comentario": "Un pastel clásico relleno de deliciosa codorniz y ricas lentejas, horneado en una corteza de hojaldre húmeda y cubierto con una celosía de color marrón dorado.",
+            "correo": "Mia.fer35@gmail.com",
+            "usuario": "Mia_Fer"
+        },
+        {
+            "puntaje": 4.56,
+            "comentario": "Bocados de emú fritos y crujientes, condimentados con rogan josh y servidos con una salsa picante de pera Corella.",
+            "correo": "Salvador.Turner60@gmail.com",
+            "usuario": "Salvador_Turner56"
+        }
+    ],
+    "etiquetas": [
+        "Hecho a medida",
+        "Moderno",
+        "Fresco",
+        "Antojos",
+        "Oriental",
+        "Hecho a mano",
+        "Lujoso"
+    ]
+}
+
+
+21:41:04.369 INFO  AUTOMATION - afterScenario: Actualizar parcialmente producto, status: PASSED

@@ -1,14 +1,14 @@
 {
-  "nombre": "Blass",
-  "tipo": "cautivo",
+  "nombre": "Guardiolo",
+  "tipo": "Perrito",
   "edad": 3,
-  "peso": 42.3,
-  "genero": "hermafrodita",
+  "peso": 12.3,
+  "genero": "Perrito",
   "amo": {
     "nombre": "Dovie",
-    "apellido": "McLaughlin",
-    "correo": "Dovie_McLaughlin42@hotmail.com",
-    "edad": 52,
-    "pais": "Paraguay"
+    "apellido": "Cuadrado",
+    "correo": "guardioloxsiempre@hotmail.com",
+    "edad": 59,
+    "pais": "Colombia"
   }
 }

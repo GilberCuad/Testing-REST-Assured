@@ -19,3 +19,19 @@ Feature: Animales
         And Se usa el payload "animal/actualizarParcialmenteAnimal.json"
         When Se envia el request con el metodo PATCH
         Then Se verifica que el status code sea 200
+        
+        Scenario:  Eliminar un animal
+          Given Se usa el base path "animales/{id}"
+          And Se asigna el path param "id"="5"
+          When Se envia el request con el metodo DELETE
+          Then  Se verifica que el status code sea 200
+          And Se verifica que "mensaje" == "Animal con id 5 se ha eliminado satisfactoriamente"
+
+          Scenario: Obtener todos los animales
+            Given Se usa el base path "animales"
+            When Se envia el request con el metodo GET
+            Then Se verifica que el status code sea 200
+            And Se verifica que existan 30 animales
+        
+        
+        

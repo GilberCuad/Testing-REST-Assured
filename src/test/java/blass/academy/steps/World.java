@@ -1,6 +1,7 @@
 package blass.academy.steps;
 
 import blass.academy.utils.Config;
+import blass.academy.utils.JsonManager;
 import blass.academy.utils.Logs;
 import blass.academy.utils.RequestFilter;
 import io.cucumber.java.After;
@@ -19,6 +20,11 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import java.nio.file.Path;
+import java.util.List;
+
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.hasToString;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class World {
     RequestSpecification request;
@@ -82,5 +88,25 @@ public class World {
     @And("Se asigna los query params {string}={string}")
     public void asignarQueryParams(String key, String value) {
         request.queryParam(key, value);
+    }
+
+    @And("Se verifica que {string} == {string}")
+    public void verificarPropiedad(String jsonPath, String expectedValue) {
+        response.then().body(jsonPath, hasToString(expectedValue));
+    }
+
+    @And("Se verifica longitud del {string} == {string}")
+    public void seVerificaLongitudDel(String jsonPath, String expectedLength) {
+        String value = response.then().extract().path(jsonPath);
+        int actualLength = value.length();
+        assertEquals(Integer.parseInt(expectedLength), actualLength);
+    }
+
+    <T> T obtenerResponseBody(Class<T> clases) {
+        return JsonManager.parsearJson(response.asString(), clases);
+    }
+
+    <T> List<T> obtenerResponseBodyLista(Class<T> clases) {
+        return JsonManager.parsearListaJson(response.asString(), clases);
     }
 }

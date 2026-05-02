@@ -5,12 +5,14 @@ Feature: login
       And Se usa el payload "auth/logout.json"
       When Se envia el request con el metodo POST
       Then Se verifica que el status code sea 200
-      
+      And Se verifica que "mensaje" == "Se ha cerrado sesión satisfactoriamente"
+
       Scenario:  login
         Given Se usa el base path "auth/login"
         And Se usa el payload "auth/login.json"
         When Se envia el request con el metodo POST
         Then Se verifica que el status code sea 200
+        And Se verifica longitud del "accessToken" == "304"
 
         Scenario: Cambiar clave
           Given Se usa el base path "auth/cambiar-clave"

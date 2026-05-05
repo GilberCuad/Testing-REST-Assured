@@ -1,4 +1,4 @@
-20:39:34.802 DEBUG AUTOMATION - 
+21:08:57.992 DEBUG AUTOMATION - 
 =============================================
 Request
 =============================================
@@ -10,17 +10,17 @@ Request
 =============================================
 Response
 =============================================
-HTTP/1.1 200 OK 	 Response Time: 2115ms
+HTTP/1.1 200 OK 	 Response Time: 2135ms
 Response Headers:
 	Age: 0
 	Cache-Control: public, max-age=0, must-revalidate
 	Content-Length: 195
 	Content-Type: application/json; charset=utf-8
-	Date: Tue, 05 May 2026 01:39:33 GMT
+	Date: Tue, 05 May 2026 02:08:57 GMT
 	Server: Vercel
 	Strict-Transport-Security: max-age=63072000
 	X-Vercel-Cache: MISS
-	X-Vercel-Id: iad1::iad1::vksf6-1777945173750-47e714c08961
+	X-Vercel-Id: iad1::iad1::l5pt8-1777946937050-76557c40c129
 
 Response Body:
 {
@@ -40,4 +40,4 @@ Response Body:
 }
 
 
-20:39:35.477 INFO  AUTOMATION - afterScenario: Obtener Animal, status: PASSED
+21:08:58.632 INFO  AUTOMATION - afterScenario: Obtener Animal, status: PASSED

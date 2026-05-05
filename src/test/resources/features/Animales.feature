@@ -32,7 +32,8 @@ Feature: Animales
             When Se envia el request con el metodo GET
             Then Se verifica que el status code sea 200
             And Se verifica que existan 30 animales
-            
+
+            @smoke
             Scenario: Obtener Animal
               Given Se usa el base path "animales/{id}"
               And Se asigna el path param "id"="5"

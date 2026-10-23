@@ -22,11 +22,13 @@ import io.restassured.specification.RequestSpecification;
 import java.nio.file.Path;
 import java.util.List;
 
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.hasToString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class World {
+    // static: PicoContainer crea un World nuevo por escenario, el token se reutiliza en toda la ejecución
+    private static String accessToken;
+
     RequestSpecification request;
     Response response;
 
@@ -44,6 +46,7 @@ public class World {
                 scenario.getName(),
                 scenario.getStatus()
         );
+        Logs.flushToScenario(scenario);
     }
 
     public static RequestSpecification buildRequestSpecification() {
@@ -52,6 +55,28 @@ public class World {
                 .setBaseUri(Config.get("base.url"))
                 .setContentType(ContentType.JSON)
                 .build();
+    }
+
+    private static synchronized String obtenerAccessToken() {
+        if (accessToken == null) {
+            final var payload = Path.of(Config.get("path.payloads"), "auth/login.json");
+            accessToken = RestAssured
+                    .given()
+                    .spec(buildRequestSpecification())
+                    .basePath("auth/login")
+                    .body(payload.toFile())
+                    .post()
+                    .then()
+                    .statusCode(200)
+                    .extract()
+                    .path("accessToken");
+        }
+        return accessToken;
+    }
+
+    @Given("Se usa el token del login")
+    public void usarTokenDelLogin() {
+        request.header("Authorization", "Bearer " + obtenerAccessToken());
     }
 
     @Given("Se usa el base path {string}")

@@ -1,5 +1,7 @@
+@estado
 Feature: Estado
 
+  @smoke
   Scenario: Estado
     Given Se usa el base path "estado"
     When Se envia el request con el metodo GET

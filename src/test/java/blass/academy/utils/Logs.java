@@ -16,7 +16,7 @@ public class Logs {
     private enum Level {TRACE, DEBUG, INFO, WARN, ERROR, FATAL}
 
     // Buffers separados por nivel
-    private static final ThreadLocal<Map<Level, StringBuilder>> allureBuffers = ThreadLocal.withInitial(() -> {
+    private static final ThreadLocal<Map<Level, StringBuilder>> buffers = ThreadLocal.withInitial(() -> {
         final var map = new EnumMap<Level, StringBuilder>(Level.class);
         for (var lvl : Level.values()) {
             map.put(lvl, new StringBuilder());
@@ -27,7 +27,7 @@ public class Logs {
     private static void append(Level level, String message) {
         for (var lvl : Level.values()) {
             if (shouldInclude(lvl, level)) {
-                allureBuffers.get().get(lvl).append(String.format("[%-5s] %s%n", level, message));
+                buffers.get().get(lvl).append(String.format("[%-5s] %s%n", level, message));
             }
         }
     }
@@ -36,9 +36,9 @@ public class Logs {
         return messageLevel.ordinal() >= bufferLevel.ordinal();
     }
 
-    public static void flushToAllure(Scenario scenario) {
-        final var buffers = allureBuffers.get();
-        for (var entry : buffers.entrySet()) {
+    public static void flushToScenario(Scenario scenario) {
+        final var buffersPorNivel = buffers.get();
+        for (var entry : buffersPorNivel.entrySet()) {
             final var content = entry.getValue().toString();
             if (!content.isEmpty()) {
                 final var nombre = String.format("%s-Logs", entry.getKey());
@@ -46,7 +46,7 @@ public class Logs {
                 scenario.attach(contentBytes, "text/plain", nombre);
             }
         }
-        allureBuffers.remove(); // limpiar para el próximo test
+        buffers.remove(); // limpiar para el próximo test
     }
 
     public static void trace(String message) {

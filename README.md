@@ -28,7 +28,7 @@ src/test
 ├── java
 │   ├── runner
 │   │   └── TestRunner.java            # Suite de JUnit Platform que ejecuta Cucumber
-│   └── blass/academy
+│   └── blass/apitesting
 │       ├── models                     # Records para deserializar respuestas
 │       │   ├── Animal.java
 │       │   ├── Amo.java
@@ -84,6 +84,7 @@ Definidos en `World.java` (genéricos):
 |------------------------------------------------------------|------------------------------------------------|
 | `Se usa el base path "<ruta>"`                             | Ruta del endpoint (admite `{param}`)           |
 | `Se usa el payload "<carpeta/archivo.json>"`               | Body tomado de `payloads/`                     |
+| `Se usa el body:` + tabla `clave \| valor`                 | Body JSON armado desde la tabla (ideal en Scenario Outline) |
 | `Se asigna el path param "<clave>"="<valor>"`              | Reemplaza `{clave}` en la ruta                 |
 | `Se asigna los query params "<clave>"="<valor>"`           | Agrega query param                             |
 | `Se usa el token del login`                                | Agrega `Authorization: Bearer <accessToken>`   |
@@ -101,6 +102,25 @@ Given Se usa el base path "auth/cambiar-clave"
 And Se usa el token del login
 And Se usa el payload "auth/cambiarClave.json"
 When Se envia el request con el metodo POST
+```
+
+### Scenario Outline (un escenario, varios datos)
+
+`Auth.feature` incluye un ejemplo: el mismo flujo de login se ejecuta una vez por cada fila de `Examples`, reemplazando `<usuario>`, `<clave>`, `<status>` y `<mensaje>`:
+
+```gherkin
+Scenario Outline: Login rechazado: <caso>
+  Given Se usa el base path "auth/login"
+  And Se usa el body:
+    | username | <usuario> |
+    | password | <clave>   |
+  When Se envia el request con el metodo POST
+  Then Se verifica que el status code sea <status>
+  And Se verifica que "mensaje" == "<mensaje>"
+
+  Examples:
+    | caso             | usuario       | clave      | status | mensaje                   |
+    | clave incorrecta | standard_user | clave_mala | 401    | Usuario/Clave incorrectas |
 ```
 
 Específicos:

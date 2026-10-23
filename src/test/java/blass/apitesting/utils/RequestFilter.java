@@ -1,4 +1,4 @@
-package blass.academy.utils;
+package blass.apitesting.utils;
 
 import io.restassured.filter.FilterContext;
 import io.restassured.filter.log.RequestLoggingFilter;

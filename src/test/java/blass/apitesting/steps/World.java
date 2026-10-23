@@ -1,9 +1,9 @@
-package blass.academy.steps;
+package blass.apitesting.steps;
 
-import blass.academy.utils.Config;
-import blass.academy.utils.JsonManager;
-import blass.academy.utils.Logs;
-import blass.academy.utils.RequestFilter;
+import blass.apitesting.utils.Config;
+import blass.apitesting.utils.JsonManager;
+import blass.apitesting.utils.Logs;
+import blass.apitesting.utils.RequestFilter;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.ParameterType;
@@ -21,6 +21,7 @@ import io.restassured.specification.RequestSpecification;
 
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.Matchers.hasToString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -103,6 +104,11 @@ public class World {
     public void seUsaElPayload(String archivo) {
         final var path = Path.of(Config.get("path.payloads"), archivo);
         request.body(path.toFile());
+    }
+
+    @And("Se usa el body:")
+    public void seUsaElBody(Map<String, String> body) {
+        request.body(body);
     }
 
     @And("Se asigna el path param {string}={string}")

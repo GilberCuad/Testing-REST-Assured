@@ -1,4 +1,4 @@
-package blass.academy.models;
+package blass.apitesting.models;
 
 public record Amo(
         String nombre,

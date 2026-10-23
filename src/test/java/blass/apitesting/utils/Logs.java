@@ -1,4 +1,4 @@
-package blass.academy.utils;
+package blass.apitesting.utils;
 
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
@@ -46,7 +46,7 @@ public class Logs {
                 scenario.attach(contentBytes, "text/plain", nombre);
             }
         }
-        buffers.remove(); // limpiar para el próximo test
+        buffers.remove();
     }
 
     public static void trace(String message) {

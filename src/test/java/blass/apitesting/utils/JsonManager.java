@@ -1,4 +1,4 @@
-package blass.academy.utils;
+package blass.apitesting.utils;
 
 import tools.jackson.databind.ObjectMapper;
 

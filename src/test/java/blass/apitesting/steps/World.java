@@ -1,9 +1,9 @@
-package blass.academy.steps;
+package blass.apitesting.steps;
 
-import blass.academy.utils.Config;
-import blass.academy.utils.JsonManager;
-import blass.academy.utils.Logs;
-import blass.academy.utils.RequestFilter;
+import blass.apitesting.utils.Config;
+import blass.apitesting.utils.JsonManager;
+import blass.apitesting.utils.Logs;
+import blass.apitesting.utils.RequestFilter;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.ParameterType;

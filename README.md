@@ -28,7 +28,7 @@ src/test
 ├── java
 │   ├── runner
 │   │   └── TestRunner.java            # Suite de JUnit Platform que ejecuta Cucumber
-│   └── blass/academy
+│   └── blass/apitesting
 │       ├── models                     # Records para deserializar respuestas
 │       │   ├── Animal.java
 │       │   ├── Amo.java

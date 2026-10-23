@@ -1,6 +1,6 @@
-package blass.academy.steps;
+package blass.apitesting.steps;
 
-import blass.academy.models.Animal;
+import blass.apitesting.models.Animal;
 import io.cucumber.java.en.And;
 import java.util.Map;
 
@@ -18,7 +18,7 @@ public class AnimalSteps {
     @And("Se verifica que existan {int} animales")
     public void verificarLongitud(int logintudEsperada) {
        final var animales = world.obtenerResponseBodyLista(Animal.class);
-       assertEquals(logintudEsperada, animales.size(), "logitud incorrrecta");
+       assertEquals(logintudEsperada, animales.size(), "longitud incorrecta");
     }
 
     @And("Se verifica que el animal tenga:")

@@ -1,6 +1,6 @@
-package blass.academy.steps;
+package blass.apitesting.steps;
 
-import blass.academy.models.Producto;
+import blass.apitesting.models.Producto;
 import io.cucumber.java.en.And;
 
 import java.util.Map;
